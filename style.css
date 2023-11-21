@@ -160,7 +160,7 @@ body {
 .youtube-link {
     font-size: 1.5rem;
     line-height: 1.71;
-    text-align: center;
+    text-align: right;
     color: #00D700;
     text-decoration: underline;
 }
@@ -168,7 +168,7 @@ body {
 .youtube-link:hover {
     font-size: 1.5rem;
     line-height: 1.71;
-    text-align: center;
+    text-align: right;
     color: #00D700;
     text-decoration: underline;
 }
