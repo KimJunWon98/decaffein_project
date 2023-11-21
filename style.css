@@ -160,16 +160,16 @@ body {
 .youtube-link {
     font-size: 1.5rem;
     line-height: 1.71;
-    text-align: right;
-    color: #00D700;
+    text-align: center;
+    color: #f73737;
     text-decoration: underline;
 }
 
 .youtube-link:hover {
     font-size: 1.5rem;
     line-height: 1.71;
-    text-align: right;
-    color: #00D700;
+    text-align: center;
+    color: #f73737;
     text-decoration: underline;
 }
 
