@@ -113,7 +113,7 @@
           alt="youtube-icon"
           class="youtube-icon"
         />
-        <a class="youtube-link">By De:카페인&nbsp;</a>
+        <a class="youtube-link">By De:Caffein&nbsp;</a>
       </div>
     </section>
     <h3 class="pb-2 d-flex justify-content-center">성별을 선택하세요</h3>
@@ -338,10 +338,17 @@
     </script>
     <script type="text/javascript">
       let URL;
+      // 모델 학습하고, 남자, 여자 각각 링크 변경하기.
       const urlMale =
         "https://teachablemachine.withgoogle.com/models/o9D1N5TN/";
+
+      //   const urlFemale =
+      //     "https://teachablemachine.withgoogle.com/models/bB3YHn5r/";
+
+      // 우리가 학습한 모델
       const urlFemale =
-        "https://teachablemachine.withgoogle.com/models/bB3YHn5r/";
+        "https://teachablemachine.withgoogle.com/models/8D4ocfXFj/";
+
       let model, webcam, labelContainer, maxPredictions;
       async function init() {
         if (document.getElementById("gender").checked) {
