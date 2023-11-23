@@ -569,8 +569,10 @@
         animalImage.src =
           "/img/" + imagePrefix + prediction[0].className + ".jpeg";
         animalImage.alt = prediction[0].className + " 이미지";
-        animalImage.style.maxWidth = "600px"; // 이미지의 최대 너비를 조절할 수 있습니다.
+        animalImage.style.maxWidth = "300px"; // 이미지의 최대 너비를 조절할 수 있습니다.
         $(".result-message").html(title + explain + celeb);
+
+        // 이미지 빼려면 주석 처리하기.
         $(".result-message").append(animalImage);
         var barWidth;
         for (let i = 0; i < maxPredictions; i++) {
