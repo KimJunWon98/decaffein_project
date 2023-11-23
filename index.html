@@ -127,7 +127,7 @@
           </span>
         </label>
       </div>
-      <p class="d-flex align-items-center pl-3">여자</p>
+      <p class="d-flex align-items-center pl-3">남자</p>
     </section>
     <h3 class="pb-2 d-flex justify-content-center">
       <br />전처리된 이미지인가요?
@@ -360,16 +360,33 @@
       const urlFemale =
         "https://teachablemachine.withgoogle.com/models/bB3YHn5r/";
 
-      //   // 우리가 학습한 모델
-      //   const urlFemale =
-      //     "https://teachablemachine.withgoogle.com/models/8D4ocfXFj/";
+      // 우리가 학습한 모델
+      const urlFemale_preprocessed =
+        "https://teachablemachine.withgoogle.com/models/8D4ocfXFj/";
+
+      const urlFemale_nonpreprocessed = urlMale;
+
+      const urlmale_preprocessed =
+        "https://teachablemachine.withgoogle.com/models/xQQzw1PCf/";
+
+      const urlmale_nonpreprocessed = urlFemale;
 
       let model, webcam, labelContainer, maxPredictions;
       async function init() {
         if (document.getElementById("gender").checked) {
-          URL = urlMale;
+          // Male
+          if (document.getElementById("preprocessing").checked) {
+            URL = urlMale_preprocessed;
+          } else {
+            URL = urlMale_nonpreprocessed;
+          }
         } else {
-          URL = urlFemale;
+          // Female
+          if (document.getElementById("preprocessing").checked) {
+            URL = urlFemale_preprocessed;
+          } else {
+            URL = urlFemale_nonpreprocessed;
+          }
         }
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -403,7 +420,7 @@
               resultExplain =
                 "따뜻하고 상냥한 당신은 주변 사람들에게 끊임없는 행복을 전하는 매력적인 사람이에요. 친절하고 적극적인 성격으로 인해 어디든 가면 인기가 많고, 당신만의 유쾌한 에너지로 분위기를 밝게 만들어 줍니다. 애교와 웃음이 넘치는 당신은 특히 연인에게 사랑스러움을 더해주어 로맨틱한 분위기를 자아냅니다. 애인의 관심이 떨어질 때면 조금 서운해하지만, 그런 모습도 사람들에게 더 매력적으로 다가가게 만드는군요!";
               resultCeleb =
-                "강아지상 연예인: 강다니엘, 송강, 최우식, 박보검, 남주혁";
+                "강아지상 연예인: 강다니엘, 송강, 최우식, 박보검, 남주혁, 백현";
               gtag("event", "남자 결과 강아지상", {
                 event_category: "남자 결과",
               });
@@ -415,7 +432,7 @@
               resultExplain =
                 "당신은 처음 만난 사람에게는 무뚝뚝해 보일지 모르지만, 실은 그 뒤로 숨겨진 매력으로 언제나 주변에서 인기를 끌고 있어요. 강인한 자존심을 가졌지만, 주변의 관심을 즐기며 살아가는 모습이 독특한 매력으로 다가와요. 연인에게는 은은한 애교를 피우며, 내면의 따뜻함을 고백하는 츤데레적인 면모도 가지고 있어요. 매끄러운 매력 속에는 고양이와 같은 우아함과 신비로움이 공존하는군요!";
               resultCeleb =
-                "고양이상 연예인: 시우민(exo), 진영(b1a4), 황민현(뉴이스트), 텐(NCT), 슈가(방탄소년단)";
+                "고양이상 연예인: 강동원, 이종석, 시우민, 진영(b1a4), 황민현(뉴이스트), 텐(NCT), 슈가(방탄소년단)";
               gtag("event", "남자 결과 고양이상", {
                 event_category: "남자 결과",
               });
@@ -426,7 +443,7 @@
               resultExplain =
                 "순수하고 활기찬 에너지를 가진 당신은 주변 사람들에게 행복과 기쁨을 전파하는 특별한 존재에요! 호기심이 넘치면서도 귀여운 외모로, 주변 사람들은 자연스럽게 당신을 따르게 되죠. 연인에게는 상큼하고 순수한 모습으로 보호받는 느낌을 주어 보호본능을 자극하는데, 특별한 애교 없이도 사랑스러움이 넘쳐나는군요!";
               resultCeleb =
-                "토끼상 연예인: 정국(방탄소년단), 박지훈(워너원), 수빈(투모로우바이투모로우), 안형섭, 도영(NCT)";
+                "토끼상 연예인: 정국, 바비, 박지훈(워너원), 수호(엑소), 안형섭, 도영(NCT)";
               gtag("event", "남자 결과 토끼상", {
                 event_category: "남자 결과",
               });
@@ -437,7 +454,7 @@
               resultExplain =
                 "무뚝뚝한 첫인상으로 나타나지만, 실제로는 따뜻하고 배려심 깊은 당신! 겉으로는 강인하고 시크한 매력을 가졌지만, 한 번 가까이 다가가면 헤어나오기 어려운 터프한 면모와 카리스마를 자랑하는 남자에요. 처음엔 다가가기 어려워 보일지 몰라도, 속에는 정말로 따뜻한 마음이 숨어있는군요.";
               resultCeleb =
-                "공룡상 연예인: 김우빈, 이민기, 류준열, 공유, 탑(최승현)";
+                "공룡상 연예인: 김우빈, 이민기, 류준열, 공유, 탑(최승현), 윤두준";
               gtag("event", "남자 결과 공룡상", {
                 event_category: "남자 결과",
               });
@@ -471,7 +488,7 @@
               resultExplain =
                 "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 상냥하고 활발한 성격으로 어디에서도 인기폭발이지만, 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!";
               resultCeleb =
-                "강아지상 연예인: 박보영, 아이유, 윤승아, 민아(걸스데이), 한지민";
+                "강아지상 연예인: 박보영, 윤승아, 민아, 한지민, 한가인, 츄";
               gtag("event", "여자 결과 강아지상", {
                 event_category: "여자 결과",
               });
@@ -481,7 +498,7 @@
               resultExplain =
                 "도도하고 섹시한 당신은 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 처음 보는 사람들에게는 차가운 인상을 주지만, 그 뒤로는 묘한 매력이 가득하다. 시크한 츤데레지만 관심 받는 것을 좋아하고 애인에게 관심이 받고 싶을 때는 애교도 부릴 줄 아는 귀여운 매력을 가졌다.";
               resultCeleb =
-                "고양이상 연예인: 안소희(원더걸스), 오연서, 한예슬, 이성경, 이효리";
+                "고양이상 연예인: 권나라, 안소희(원더걸스), 오연서, 한예슬, 이성경, 해린, 제니";
               gtag("event", "여자 결과 고양이상", {
                 event_category: "여자 결과",
               });
@@ -491,7 +508,7 @@
               resultExplain =
                 "발랄하고 귀여운 당신은 주변을 행복으로 가득 채운다. 호기심이 많아 활발하며 귀엽고 순수한 외모를 가지고 있다. 존재 자체가 상큼하고 깜찍한 당신은 특별한 애교 없이도 연인에게 너무나도 사랑스럽다!";
               resultCeleb =
-                "토끼상 연예인: 수지, 나연(트와이스), 예린(여자친구), 한승연(카라), 문채원";
+                "토끼상 연예인: 장원영, 수지, 나연(트와이스), 아이유, 한승연, 문채원";
               gtag("event", "여자 결과 토끼상", {
                 event_category: "여자 결과",
               });
@@ -501,7 +518,7 @@
               resultExplain =
                 "사람을 홀리는 매력과 선뜻 다가가기 힘든 섹시한 매력을 가졌다. 우아한 외모에 더해 뛰어난 센스의 성격을 가진 당신은 어딜가도 주목받는 주인공이다.";
               resultCeleb =
-                "사슴상 연예인: 윤아(소녀시대), 이연희, 고아라, 문근영, 정유미(부산행 배우)";
+                "사슴상 연예인: 윤아, 이연희, 고아라, 문근영, 정유미";
               gtag("event", "여자 결과 사슴상", {
                 event_category: "여자 결과",
               });
@@ -511,7 +528,7 @@
               resultExplain =
                 "사람을 홀리는 매력을 가진 당신은 선뜻 다가가기 힘든 섹시한 매력을 가졌다. 우아한 외모에 더해 뛰어난 센스의 성격을 가진 당신은 어딜가도 주목받는 주인공이다! 사교적인 성격을 가져 연인에게도 적극적으로 애정표현을 하지만 밀당의 고수인 당신은 연인의 혼을 쏙 빼놓는 매력쟁이다.";
               resultCeleb =
-                "여우상 연예인: 경리(나인뮤지스), 예지(있지), 한혜진(모델), 헤이즈, 지연(티아라)";
+                "여우상 연예인: 경리(나인뮤지스), 예지(있지), 한혜진, 헤이즈, 지연(티아라)";
               gtag("event", "여자 결과 여우상", {
                 event_category: "여자 결과",
               });
