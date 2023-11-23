@@ -569,7 +569,8 @@
         animalImage.src =
           "/img/" + imagePrefix + prediction[0].className + ".jpeg";
         if (prediction[0].className == "deer") {
-          "/img/" + imagePrefix + prediction[0].className + ".gif";
+          animalImage.src =
+            "/img/" + imagePrefix + prediction[0].className + ".gif";
         }
         animalImage.alt = prediction[0].className + " 이미지";
         animalImage.style.maxWidth = "300px"; // 이미지의 최대 너비를 조절할 수 있습니다.
