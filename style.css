@@ -497,32 +497,6 @@ input#preprocessing {
     transition: 0.3s;
   }
   
-  .preprocessing-knob > i {
-    position: absolute;
-    width: 4px;
-    height: 18px;
-    top: 100%;
-    background-color: #f470a7;
-    left: calc(50% - 2px);
-  }
-  
-  .preprocessing-knob > i:before,
-  .preprocessing-knob > i:after {
-    width: 6px;
-    position: absolute;
-    top: 42%;
-    content: "";
-    height: 4px;
-    background-color: #f470a7;
-  }
-  
-  .preprocessing-knob > i:before {
-    left: 4px;
-  }
-  .preprocessing-knob > i:after {
-    left: -6px;
-  }
-  
   input:checked + label > .preprocessing-knob {
     box-shadow: 0 0 0 8px #a1c6dd inset;
     background-color: #e2ecf4;
